@@ -86,11 +86,11 @@ const MainPageComponent = () => {
     // Calculate Tip
 
     const handleTipTotal = () => {
-        if (billInput === undefined || tipPercent === undefined) {
+        if (billInput === undefined || tipPercent === undefined || peopleInput === undefined) {
             setTipAmount("0.00");
         } else {
             const percentTip = tipPercent / 100;
-            const tip = billInput * percentTip;
+            const tip = ((billInput * percentTip) / peopleInput);
             setTipAmount(String(tip.toFixed(2)));
         }
     }
@@ -100,14 +100,14 @@ const MainPageComponent = () => {
             setTotal("0.00");
             return;
         }
+    
         if (peopleInput === undefined || peopleInput === 0) {
             const bill = parseFloat(billInput.toString());
             setTotal(bill.toFixed(2));
             return;
         }
-    
         const tip = parseFloat(tipAmount);
-        const total = (billInput / peopleInput) + tip;
+        const total = (billInput / (peopleInput || 1)) + tip;
         setTotal(total.toFixed(2).toString());
     };
     
