@@ -36,6 +36,7 @@ const MainPageComponent = () => {
         handleTipTotal();
         handleTotal();
     }, [billInput, peopleInput, tipPercent, tipAmount]);
+
     
     const handleBillInput = (bill: ChangeEvent<HTMLInputElement>) => {
         const billValue = parseFloat(bill.target.value);
