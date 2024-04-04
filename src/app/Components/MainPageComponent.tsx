@@ -146,7 +146,7 @@ const MainPageComponent = () => {
                     <div className='bg-[color:var(--white)] p-8 rounded-[1.5rem] w-full grid grid-cols-1 md:grid-cols-2 gap-8 mx-0 md:mx-2 just max-w-4xl'>
                         <div className=' grid gap-8 px-0 py-1'>
                             <div className='grid gap-2'>
-                                <HeaderComponent title="Bill" error={invalidBill}/>
+                                <Header title="Bill" error={invalidBill}/>
 <InputBill value={billInput !== undefined ? billInput.toString() : ''} error={invalidBill} input={handleBillInput} />                            </div>
                             <div className='grid gap-2'>
                                 <Header title="Select Tip %" error={false}/>
