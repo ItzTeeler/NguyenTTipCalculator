@@ -2,8 +2,8 @@ Name - Tyler Nguyen
 Date - 4-4-2024
 Lab Name - Tip Calculator
 Description -
-Peer Reviewer - 
-Peer Review - 
+Peer Reviewer - Marcos Rodriguez 1:39 pm
+Peer Review - overall good work, the styling is similar to the layout and the small things like the input color and cant be 0 messege are there. however the logic for the tip and total is incorrect. the tip is supposed to be split between all the people and the total is the bill + tip divided by the amount of people. if you fix these things i think you should be good.
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
