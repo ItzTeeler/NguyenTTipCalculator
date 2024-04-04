@@ -2,8 +2,8 @@
 import React, { useEffect, useState, ChangeEvent } from 'react'
 import iconLogo from '@/images/logo.svg'
 import Image from 'next/image'
-import InputBill from './InputBill'
-import Header from './Header'
+import InputBill from './InputBillComponent'
+import Header from './HeaderComponent'
 import ButtonComponents from './ButtonComponents'
 import CustomTipComponent from './CustomTipComponent'
 import NumberofPeopleHeader from './NumberofPeopleHeader'
@@ -146,7 +146,7 @@ const MainPageComponent = () => {
                     <div className='bg-[color:var(--white)] p-8 rounded-[1.5rem] w-full grid grid-cols-1 md:grid-cols-2 gap-8 mx-0 md:mx-2 just max-w-4xl'>
                         <div className=' grid gap-8 px-0 py-1'>
                             <div className='grid gap-2'>
-                                <Header title="Bill" error={invalidBill}/>
+                                <HeaderComponent title="Bill" error={invalidBill}/>
 <InputBill value={billInput !== undefined ? billInput.toString() : ''} error={invalidBill} input={handleBillInput} />                            </div>
                             <div className='grid gap-2'>
                                 <Header title="Select Tip %" error={false}/>
