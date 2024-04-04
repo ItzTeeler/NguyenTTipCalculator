@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, ChangeEvent } from 'react'
 import iconLogo from '@/images/logo.svg'
 import Image from 'next/image'
 import InputBill from './InputBill'
@@ -32,7 +32,7 @@ const MainPageComponent = () => {
     const [bgColor, setBgColor] = useState<string>("bg-[color:var(--totalNumber)]")
     const [buttonOpacity, setButtonOpacity] = useState<string>("opacity-20")
 
-    const handleBillInput = (bill: any) => {
+    const handleBillInput = (bill: ChangeEvent<HTMLInputElement>) => {
         const billValue = parseFloat(bill.target.value);
         setBillInput(billValue);
         if (billValue <= 0) {
@@ -45,7 +45,7 @@ const MainPageComponent = () => {
     };
     
     // People
-    const handlePersonInput = (people: any) => {
+    const handlePersonInput = (people: ChangeEvent<HTMLInputElement>) => {
         const inputValue = parseInt(people.target.value);
         setPeopleInput(inputValue);
         if (inputValue <= 0) {
@@ -60,15 +60,22 @@ const MainPageComponent = () => {
 
     // Tip Button
 
-    const handleTipButton = (tip: any) => {
-        setTipPercent(tip)
-        console.log(tip);
+    const handleTipButton = (tip: string | undefined) => {
+        if (tip !== undefined) {
+            const tipValue = parseInt(tip);
+            setTipPercent(tipValue);
+            console.log(tipValue);
+        }
     }
-
-    const handleCustomInput = (tip: any) => {
-        setTipPercent(tip)
-        setCustomPercent(tip)
+    
+    const handleCustomInput = (tip: number | undefined) => {
+        if (tip !== undefined) {
+            const tipValue = tip;
+            setTipPercent(tipValue);
+            setCustomPercent(tipValue);
+        }
     }
+    
 
     // Calculate Tip
 
@@ -140,8 +147,7 @@ const MainPageComponent = () => {
                         <div className=' grid gap-8 px-0 py-1'>
                             <div className='grid gap-2'>
                                 <Header title="Bill" error={invalidBill}/>
-                                <InputBill value={billInput ?? ''} error={invalidBill} input={handleBillInput}/>
-                            </div>
+<InputBill value={billInput !== undefined ? billInput.toString() : ''} error={invalidBill} input={handleBillInput} />                            </div>
                             <div className='grid gap-2'>
                                 <Header title="Select Tip %" error={false}/>
                                 <div className='grid grid-cols-2 md:grid-cols-3 gap-4 items-center justify-center'>
@@ -151,6 +157,7 @@ const MainPageComponent = () => {
                                     <ButtonComponents number="25" tip={handleTipButton} />
                                     <ButtonComponents number="50" tip={handleTipButton} />
                                     <CustomTipComponent value={customPercent !== undefined ? customPercent.toString() : ''} tip={handleCustomInput} />
+
                                 </div>
                             </div>
                             <div className='grid gap-2'>

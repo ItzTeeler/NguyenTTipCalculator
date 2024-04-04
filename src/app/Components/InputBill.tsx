@@ -1,8 +1,8 @@
 'use client'
-import React from 'react'
+import React, { ChangeEvent } from 'react';
 import Image from 'next/image'
 import dollarIcon from '@/images/icon-dollar.svg'
-const InputBill = (props: {value: any; error: any; input: any;}) => {
+const InputBill = (props: {value: string; error: boolean; input: (event: ChangeEvent<HTMLInputElement>) =>void;}) => {
 
 
   return (

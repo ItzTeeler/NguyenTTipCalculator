@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { ChangeEvent } from 'react'
 import Image from 'next/image'
 import personIcon from '@/images/icon-person.svg'
-const InputPeopleComponent = (props:{value: any; error: any; input: any;}) => {
+const InputPeopleComponent = (props:{value: string|number; error: boolean; input: (people: ChangeEvent<HTMLInputElement>)=>void;}) => {
   return (
     <div className='relative'>
       <div className='absolute flex items-center left-4 inset-y-0'>
