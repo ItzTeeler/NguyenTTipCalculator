@@ -32,6 +32,11 @@ const MainPageComponent = () => {
     const [bgColor, setBgColor] = useState<string>("bg-[color:var(--totalNumber)]")
     const [buttonOpacity, setButtonOpacity] = useState<string>("opacity-20")
 
+    useEffect(() => {
+        handleTipTotal();
+        handleTotal();
+    }, [billInput, peopleInput, tipPercent, tipAmount]);
+    
     const handleBillInput = (bill: ChangeEvent<HTMLInputElement>) => {
         const billValue = parseFloat(bill.target.value);
         setBillInput(billValue);
@@ -129,13 +134,6 @@ const MainPageComponent = () => {
         setButtonOpacity("opacity-20");
     };
     
-
-
-
-    useEffect(() => {
-        handleTipTotal();
-        handleTotal();
-    }, [billInput, peopleInput, tipPercent, tipAmount]);
     return (
         <>
             <div className='min-h-screen bg-[color:var(--bgColor)]'>
