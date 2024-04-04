@@ -2,32 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: Space-Mono;
+  src: url(../Fonts/Space_Mono/SpaceMono-Regular.ttf);
+}
+@font-face {
+  font-family: Space-Mono-Bold;
+  src: url(../Fonts/Space_Mono/SpaceMono-Bold.ttf);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+:root{
+  --bgColor: hsl(185, 41%, 84%);
+  --white: hsl(0, 0%, 100%);
+  --bgInput: hsl(189, 41%, 97%);
+  --textColor: hsl(184, 14%, 56%);
+  --buttonBg: hsl(183, 100%, 15%);
+  --totalBg: hsl(183, 100%, 15%);
+  --totalNumber: hsl(172, 67%, 45%);
+  --dark: hsl(186, 14%, 43%);
+  --error: hsl(0, 100%, 50%);
+  --hover: hsl(173, 61%, 77%);
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
