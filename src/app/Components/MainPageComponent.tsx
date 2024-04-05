@@ -146,7 +146,7 @@ const MainPageComponent = () => {
                         <div className=' grid gap-8 px-0 py-1'>
                             <div className='grid gap-2'>
                                 <Header title="Bill" error={invalidBill}/>
-<InputBill value={billInput !== undefined ? billInput.toString() : ''} error={invalidBill} input={handleBillInput} />                            </div>
+                                    <InputBill value={billInput !== undefined ? billInput.toString() : ''} error={invalidBill} input={handleBillInput} />                            </div>
                             <div className='grid gap-2'>
                                 <Header title="Select Tip %" error={false}/>
                                 <div className='grid grid-cols-2 md:grid-cols-3 gap-4 items-center justify-center'>
